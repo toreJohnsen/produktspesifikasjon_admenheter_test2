@@ -1,0 +1,71 @@
+name: Generate pygeoapi config
+
+on:
+  workflow_dispatch:
+    inputs:
+      config_file:
+        description: YAML-fil i `config/` med `xmi_url` og `output_filename`
+        default: admenheter.yml
+        required: true
+
+jobs:
+  build-config:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Load config values
+        id: config
+        env:
+          CONFIG_FILE: ${{ github.event.inputs.config_file }}
+        run: |
+          python - <<'PY'
+          import os
+
+          base_dir = os.path.join(os.getcwd(), "config")
+          requested = os.environ["CONFIG_FILE"]
+          config_path = os.path.normpath(os.path.join(base_dir, requested))
+
+          try:
+              inside_config = os.path.commonpath([base_dir, config_path]) == base_dir
+          except ValueError:
+              inside_config = False
+          if not inside_config:
+              raise SystemExit(f"Config path must stay inside config/: {requested}")
+
+          try:
+              with open(config_path, encoding="utf-8") as fh:
+                  raw_lines = fh.readlines()
+          except FileNotFoundError as exc:
+              raise SystemExit(f"Config file not found: {requested}") from exc
+
+          values = {}
+          for raw in raw_lines:
+              line = raw.split("#", 1)[0].strip()
+              if not line or ":" not in line:
+                  continue
+              key, value = line.split(":", 1)
+              values[key.strip()] = value.strip().strip("'").strip('"')
+
+          required = ("xmi_url", "output_filename")
+          missing = [key for key in required if not values.get(key)]
+          if missing:
+              raise SystemExit(
+                  f"Missing required keys in {requested}: {', '.join(missing)}"
+              )
+
+          with open(os.environ["GITHUB_OUTPUT"], "a", encoding="utf-8") as gh_out:
+              for key in required:
+                  gh_out.write(f"{key}={values[key]}\n")
+          PY
+
+      - name: Ensure output directory exists
+        run: |
+          mkdir -p "$(dirname "${{ steps.config.outputs.output_filename }}")"
+
+      - name: Generate pygeoapi YAML
+        uses: arkitektum/pygeoapiconfig@main
+        with:
+          url: ${{ steps.config.outputs.xmi_url }}
+          output: ${{ steps.config.outputs.output_filename }}
