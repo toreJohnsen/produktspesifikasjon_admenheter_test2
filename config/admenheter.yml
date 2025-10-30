@@ -1,0 +1,5 @@
+# Oppdater denne URL-en til riktig SOSI XMI-endepunkt
+xmi_url: https://sosi.geonorge.no/svn/SOSI/SOSI Del 3/Statens kartverk/AdministrativeEnheter_FylkerOgKommuner-20240101.xml
+
+# Relativ bane for generert pygeoapi-konfigurasjon
+output_filename: configs/admenheter-pygeoapi-config.yaml
