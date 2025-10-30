@@ -1,0 +1,87 @@
+name: Generate produktspesifikasjon
+
+permissions:
+  contents: write
+  pull-requests: write
+
+on:
+  workflow_dispatch:
+    inputs:
+      config_path:
+        description: Path to produktspesifikasjon config YAML
+        default: produktspesifikasjon/admenheter/config.yml
+        required: true
+
+jobs:
+  produktspesifikasjon:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Load produktspesifikasjon config
+        id: config
+        env:
+          CONFIG_PATH: ${{ github.event.inputs.config_path }}
+        run: |
+          python - <<'PY'
+          import os
+
+          config_path = os.environ["CONFIG_PATH"]
+          workspace = os.getcwd()
+          target = os.path.normpath(os.path.join(workspace, config_path))
+          base = os.path.join(workspace, "produktspesifikasjon")
+
+          try:
+              inside = os.path.commonpath([base, target]) == base
+          except ValueError:
+              inside = False
+          if not inside:
+              raise SystemExit(
+                  f"Config path must stay inside produktspesifikasjon/: {config_path}"
+              )
+
+          try:
+              with open(target, encoding="utf-8") as fh:
+                  lines = fh.readlines()
+          except FileNotFoundError as exc:
+              raise SystemExit(f"Config file not found: {config_path}") from exc
+
+          values = {}
+          for raw in lines:
+              line = raw.split("#", 1)[0].strip()
+              if not line or ":" not in line:
+                  continue
+              key, value = line.split(":", 1)
+              values[key.strip()] = value.strip().strip("'").strip('"')
+
+          required_map = {
+              "metadataId": "metadata-id",
+              "ogc_feature_api": "ogc-feature-api",
+              "output_directory": "output-directory",
+              "product_slug": "product-slug",
+              "updated": "updated",
+          }
+
+          missing = [k for k in required_map if not values.get(k)]
+          if missing:
+              raise SystemExit(
+                  "Missing required keys in config.yml: "
+                  + ", ".join(missing)
+              )
+
+          with open(os.environ["GITHUB_OUTPUT"], "a", encoding="utf-8") as gh_out:
+              for source, dest in required_map.items():
+                  gh_out.write(f"{dest}={values[source]}\n")
+          PY
+
+      - id: spec
+        uses: arkitektum/ps.editor.actions@main
+        with:
+          metadata-id: ${{ steps.config.outputs.metadata-id }}
+          ogc-feature-api: ${{ steps.config.outputs.ogc-feature-api }}
+          output-directory: ${{ steps.config.outputs.output-directory }}
+          product-slug: ${{ steps.config.outputs.product-slug }}
+          updated: ${{ steps.config.outputs.updated }}
+      - name: Inspect generated files
+        run: |
+          echo "Markdown: ${{ steps.spec.outputs.spec-markdown }}"
+          echo "psdata:  ${{ steps.spec.outputs.psdata-path }}"
