@@ -1,0 +1,180 @@
+resources:
+  fylke:
+    type: collection
+    title: 'Fylke'
+    description: 'administrativ inndeling av nasjonen på regionalt nivå Merknad: Tilsvarer NUTS 3 på internasjonalt statistisk nivå'
+    providers:
+      - type: feature
+        name: postgresql_ext.PostgreSQLExtendedProvider
+        id_field: objid
+        table: fylke
+        fields:
+          objid:
+            title: 'Objekt ID'
+            description: 'løpende lokal identifikator for objektet.'
+          lokalId:
+            title: 'identifikasjon.lokalId'
+            description: 'lokal identifikator av et objekt Merknad: Det er dataleverandørens ansvar å sørge for at den lokale identifikatoren er unik innenfor navnerommet.'
+          navnerom:
+            title: 'identifikasjon.navnerom'
+            description: 'navnerom som unikt identifiserer datakilden til et objekt, anbefales å være en http-URI Eksempel: http://data.geonorge.no/SentraltStedsnavnsregister/1.0 Merknad : Verdien for navnerom vil eies av den dataprodusent som har ansvar for de unike identifikatorene og må være registrert i data.geonorge.no eller data.norge.no'
+          versjonId:
+            title: 'identifikasjon.versjonId'
+            description: 'identifikasjon av en spesiell versjon av et geografisk objekt (instans)'
+          oppdateringsdato:
+            title: 'oppdateringsdato'
+            description: 'tidspunkt for siste endring på objektet Merknad: Oppdateringsdato kan være forskjellig fra datafangsdato ved at data som er registrert kan bufres en kortere eller lengre periode før disse legges inn i datasystemet (databasen).'
+          gyldigFra:
+            title: 'gyldigFra'
+            description: 'Tidspunktet når objektet oppstod i den virkelige verden'
+          gyldigTil:
+            title: 'gyldigTil'
+            description: 'Tidspunktet når objektet opphørte å eksistere i den virkelige verden'
+          datafangstdato:
+            title: 'datafangstdato'
+            description: 'dato når objektet siste gang ble registrert/observert/målt i terrenget Merknad: I mange tilfeller er denne forskjellig fra oppdateringsdato, da registrerte endringer kan bufres i en kortere eller lengre periode før disse legges inn i databasen. Ved førstegangsregistrering settes Datafangstdato lik førsteDatafangstdato.'
+          datauttaksdato:
+            title: 'datauttaksdato'
+            description: 'dato for uttak fra en database Merknad: Skiller seg fra Kopidato ved at en ikke skiller på om det er uttak fra en originaldatabase eller en kopidatabase.'
+          opphav:
+            title: 'opphav'
+            description: 'referanse til opphavsmaterialet, kildematerialet, organisasjons/publiseringskilde Merknad: Kan også beskrive navn på person og årsak til oppdatering'
+          omrade:
+            title: 'område'
+            description: 'den geografiske avgrensingen av stemmekretsen.'
+          navn:
+            title: 'administrativEnhetNavn.navn'
+            description: 'navnet på den administrative enheten i angitt språk.'
+          sprak:
+            title: 'administrativEnhetNavn.språk'
+            description: 'angir språk for det administrative navnet.'
+          rekkefolge:
+            title: 'administrativEnhetNavn.rekkefølge'
+            description: 'angir presentasjonsrekkefølge i sammenstaninger av nav på administretiv enhet ved presentasjon på alle sprøkformer.'
+          fylkesnummer:
+            title: 'fylkesnummer'
+            description: 'nummerering av fylker i henhold til Statistisk sentralbyrå sin offisielle liste Merknad: Det presiseres at fylkesnummer alltid skal ha 2 sifre, dvs. eventuelt med ledende null. Fylkesnummer benyttes for kopling mot en rekke andre registre som også benytter 2 sifre.'
+            codelist: 'https://register.geonorge.no/sosi-kodelister/inndelinger/inndelingsbase/fylkesnummer?'
+          fylkesnavn:
+            title: 'fylkesnavn'
+            description: 'Offisielt navn på et fylke. Merk: Hvis fylket har flere vedtatte parallellnavn, framstår disse i en sammenhengende tekststreng.'
+          samiskForvaltningsomrade:
+            title: 'samiskForvaltningsområde'
+            description: 'angir om fylket er en del ac samisk forvaltningaområde'
+
+  grense:
+    type: collection
+    title: 'Grense'
+    description: 'Generell avgrensingslinje'
+    providers:
+      - type: feature
+        name: postgresql_ext.PostgreSQLExtendedProvider
+        id_field: objid
+        table: grense
+        fields:
+          objid:
+            title: 'Objekt ID'
+            description: 'løpende lokal identifikator for objektet.'
+          lokalId:
+            title: 'identifikasjon.lokalId'
+            description: 'lokal identifikator av et objekt Merknad: Det er dataleverandørens ansvar å sørge for at den lokale identifikatoren er unik innenfor navnerommet.'
+          navnerom:
+            title: 'identifikasjon.navnerom'
+            description: 'navnerom som unikt identifiserer datakilden til et objekt, anbefales å være en http-URI Eksempel: http://data.geonorge.no/SentraltStedsnavnsregister/1.0 Merknad : Verdien for navnerom vil eies av den dataprodusent som har ansvar for de unike identifikatorene og må være registrert i data.geonorge.no eller data.norge.no'
+          versjonId:
+            title: 'identifikasjon.versjonId'
+            description: 'identifikasjon av en spesiell versjon av et geografisk objekt (instans)'
+          oppdateringsdato:
+            title: 'oppdateringsdato'
+            description: 'tidspunkt for siste endring på objektet Merknad: Oppdateringsdato kan være forskjellig fra datafangsdato ved at data som er registrert kan bufres en kortere eller lengre periode før disse legges inn i datasystemet (databasen).'
+          gyldigFra:
+            title: 'gyldigFra'
+            description: 'Tidspunktet når objektet oppstod i den virkelige verden'
+          gyldigTil:
+            title: 'gyldigTil'
+            description: 'Tidspunktet når objektet opphørte å eksistere i den virkelige verden'
+          datafangstdato:
+            title: 'datafangstdato'
+            description: 'dato når objektet siste gang ble registrert/observert/målt i terrenget Merknad: I mange tilfeller er denne forskjellig fra oppdateringsdato, da registrerte endringer kan bufres i en kortere eller lengre periode før disse legges inn i databasen. Ved førstegangsregistrering settes Datafangstdato lik førsteDatafangstdato.'
+          malemetode:
+            title: 'kvalitet.målemetode'
+            description: 'metode for måling i grunnriss (x,y), og høyde (z) når metoden er den samme som ved måling i grunnriss'
+            codelist: 'https://register.geonorge.no/sosi-kodelister/generelle-konsepter/4.5/m%C3%A5lemetodekode'
+          noyaktighet:
+            title: 'kvalitet.nøyaktighet'
+            description: 'punktstandardavviket i grunnriss for punkter samt tverravvik for linjer Merknad: Oppgitt i cm'
+          datauttaksdato:
+            title: 'datauttaksdato'
+            description: 'dato for uttak fra en database Merknad: Skiller seg fra Kopidato ved at en ikke skiller på om det er uttak fra en originaldatabase eller en kopidatabase.'
+          opphav:
+            title: 'opphav'
+            description: 'referanse til opphavsmaterialet, kildematerialet, organisasjons/publiseringskilde Merknad: Kan også beskrive navn på person og årsak til oppdatering'
+          grense:
+            title: 'grense'
+            description: 'Geometri for avgrensingslinjer'
+          avgrensningstype:
+            title: 'avgrensningstype'
+            description: 'angir type avgreisningslinje. Ulike objekter avgrenses av ulike typer grenser.'
+
+  kommune:
+    type: collection
+    title: 'Kommune'
+    description: 'inndeling i administrative og politiske enheter innenfor fylket Merknad: Tilsvarer NUTS 5 og LAU 2 på internasjonalt statistisk nivå'
+    providers:
+      - type: feature
+        name: postgresql_ext.PostgreSQLExtendedProvider
+        id_field: objid
+        table: kommune
+        fields:
+          objid:
+            title: 'Objekt ID'
+            description: 'løpende lokal identifikator for objektet.'
+          lokalId:
+            title: 'identifikasjon.lokalId'
+            description: 'lokal identifikator av et objekt Merknad: Det er dataleverandørens ansvar å sørge for at den lokale identifikatoren er unik innenfor navnerommet.'
+          navnerom:
+            title: 'identifikasjon.navnerom'
+            description: 'navnerom som unikt identifiserer datakilden til et objekt, anbefales å være en http-URI Eksempel: http://data.geonorge.no/SentraltStedsnavnsregister/1.0 Merknad : Verdien for navnerom vil eies av den dataprodusent som har ansvar for de unike identifikatorene og må være registrert i data.geonorge.no eller data.norge.no'
+          versjonId:
+            title: 'identifikasjon.versjonId'
+            description: 'identifikasjon av en spesiell versjon av et geografisk objekt (instans)'
+          oppdateringsdato:
+            title: 'oppdateringsdato'
+            description: 'tidspunkt for siste endring på objektet Merknad: Oppdateringsdato kan være forskjellig fra datafangsdato ved at data som er registrert kan bufres en kortere eller lengre periode før disse legges inn i datasystemet (databasen).'
+          gyldigFra:
+            title: 'gyldigFra'
+            description: 'Tidspunktet når objektet oppstod i den virkelige verden'
+          gyldigTil:
+            title: 'gyldigTil'
+            description: 'Tidspunktet når objektet opphørte å eksistere i den virkelige verden'
+          datafangstdato:
+            title: 'datafangstdato'
+            description: 'dato når objektet siste gang ble registrert/observert/målt i terrenget Merknad: I mange tilfeller er denne forskjellig fra oppdateringsdato, da registrerte endringer kan bufres i en kortere eller lengre periode før disse legges inn i databasen. Ved førstegangsregistrering settes Datafangstdato lik førsteDatafangstdato.'
+          datauttaksdato:
+            title: 'datauttaksdato'
+            description: 'dato for uttak fra en database Merknad: Skiller seg fra Kopidato ved at en ikke skiller på om det er uttak fra en originaldatabase eller en kopidatabase.'
+          opphav:
+            title: 'opphav'
+            description: 'referanse til opphavsmaterialet, kildematerialet, organisasjons/publiseringskilde Merknad: Kan også beskrive navn på person og årsak til oppdatering'
+          omrade:
+            title: 'område'
+            description: 'den geografiske avgrensingen av stemmekretsen.'
+          navn:
+            title: 'administrativEnhetNavn.navn'
+            description: 'navnet på den administrative enheten i angitt språk.'
+          sprak:
+            title: 'administrativEnhetNavn.språk'
+            description: 'angir språk for det administrative navnet.'
+          rekkefolge:
+            title: 'administrativEnhetNavn.rekkefølge'
+            description: 'angir presentasjonsrekkefølge i sammenstaninger av nav på administretiv enhet ved presentasjon på alle sprøkformer.'
+          kommunenummer:
+            title: 'kommunenummer'
+            description: 'nummerering av kommunen i henhold til Statistisk sentralbyrå sin offisielle liste Merknad: Det presiseres at kommune alltid skal ha 4 siffer, dvs. eventuelt med ledende null. Kommune benyttes for kopling mot en rekke andre registre som også benytter 4 siffer.'
+            codelist: 'https://register.geonorge.no/sosi-kodelister/inndelinger/inndelingsbase/kommunenummer'
+          kommunenavn:
+            title: 'kommunenavn'
+            description: 'Offisielt navn på en kommune. Merk: Hvis kommunen har flere vedtatte parallellnavn, framstår disse i en sammenhengende tekststreng.'
+          samiskForvaltningsomrade:
+            title: 'samiskForvaltningsområde'
+            description: 'angir om kommunen er en del ac samisk forvaltningaområde'
