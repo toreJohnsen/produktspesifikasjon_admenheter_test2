@@ -1,0 +1,29 @@
+@startuml
+title Dybdedata - dekning OGC API Features - Objekttyper
+
+skinparam class {
+  AttributeIconSize 0
+}
+
+package "Objekttyper" {
+
+  class "Survey coverages" as Survey_coverages <<featureType>> {
+    + survey_id [0..1] : CharacterString
+    + data_owner [0..1] : CharacterString
+    + year [0..1] : Integer
+    + date_start [0..1] : Date
+    + date_end [0..1] : Date
+    + depth_sensor [0..1] : CharacterString
+    + logged_backscatter [0..1] : Boolean
+    + logged_water_column [0..1] : Boolean
+    + survey_method [0..1] : CharacterString
+    + total_area [0..1] : Real
+    + normalised_area [0..1] : Real
+    + quality_specification [0..1] : CharacterString
+    + resolution [0..1] : CharacterString
+    + modeled [0..1] : Boolean
+    + financier [0..1] : CharacterString
+  }
+}
+
+@enduml

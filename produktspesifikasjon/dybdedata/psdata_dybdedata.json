@@ -1,0 +1,145 @@
+{
+  "identification": {
+    "id": "58a262c2-4903-4dea-9490-10065fda6756",
+    "title": "Dybdedata - dekning OGC API Features",
+    "abstract": "Tjenesten viser en oversikt over hvilke norske sjøområder som har blitt dybdekartlagt/sjømålt. Dybdedata er samlet inn over en lang tidsperiode, av ulike aktører og med ulikt utstyr. I egenskapstabellen til datasettet finnes det opplysninger som måleårstall, kartleggingsmetode, dataeier/hvilken aktør som har samlet inn dataene, utstyr, ekkolodd-type, spesifikasjon og oppløsning. \nInnholdet i tjenesten er basert på tilgjengelig data hos Kartverket.\n\nDenne tjenesten er basert på OGC-API Features. OGC-API er en gruppe nye standarder som blir utviklet av Open Geospatial Consortium (OGC) for lettere å kunne tilgjengeliggjøre geografiske data på web. \nIkke alle GIS-programvarer har etablert støtte til de nye standarder, som gjør at funksjonaliteten kan oppleves som noe tregt i enkelte klienter, som f.eks. QGIS.",
+    "purpose": "Formålet med tjenesten er å gi en oversikt over innsamlede og tilgjengelige dybdedata.",
+    "keywords": [
+      "MAREANO",
+      "batymetri",
+      "dybdedata",
+      "DTM",
+      "sjømåling",
+      "ekkolodd",
+      "Nordsjøen",
+      "Barentshavet",
+      "Havområde",
+      "Hav",
+      "Norge",
+      "Svalbard",
+      "Høyde",
+      "Høydedata"
+    ],
+    "dates": {
+      "creation": "2025-02-14",
+      "publication": "2025-02-14",
+      "revision": "2025-02-14",
+      "metadata": "2025-02-26"
+    },
+    "responsibleParties": [
+      {
+        "organization": "Kartverket",
+        "email": "kundesenteret@kartverket.no",
+        "role": "owner"
+      },
+      {
+        "name": "Matilde Skjæveland Skår",
+        "organization": "Kartverket",
+        "email": "kundesenteret@kartverket.no",
+        "role": "pointOfContact"
+      },
+      {
+        "organization": "Kartverket",
+        "email": "kundesenteret@kartverket.no",
+        "role": "publisher"
+      }
+    ]
+  },
+  "scope": {
+    "level": "service",
+    "extent": {
+      "spatial": {
+        "bbox": [
+          -14.0,
+          56.0,
+          40.0,
+          86.0
+        ],
+        "description": "National"
+      },
+      "temporal": {
+        "interval": [
+          [
+            "2025-02-14",
+            "2025-02-14"
+          ]
+        ]
+      }
+    },
+    "legalConstraints": {
+      "accessConstraints": "Åpne data",
+      "useConstraints": "Lisens",
+      "license": "No conditions apply to access and use",
+      "licenseUrl": "http://inspire.ec.europa.eu/metadata-codelist/ConditionsApplyingToAccessAndUse/noConditionsApply",
+      "securityConstraints": "Ugradert"
+    }
+  },
+  "dataContent": {
+    "usage": "Tjenesten kan benyttes til å få en oversikt over tilgjengelige dybdedata, f.eks. i forbindelse med planlagte aktiviteter i et spesifikt område. Ved hjelp av informasjon tilgjengelig i egenskapstabellen, vil man kunne få et innblikk i kvalitet og egnethet av dybdedata. Nyere data er å anse av best kvalitet, da det har hovedsakelig blitt samlet inn ved bruk av multistråle ekkolodd, mens eldre data er samlet inn med enkeltstråle ekkolodd eller annet eldre utstyr.  \nTjenesten kan også benyttes til kart, presentasjoner, ulike analyser eller som beslutningsgrunnlag."
+  },
+  "dataQuality": {
+    "scope": {
+      "level": "service"
+    }
+  },
+  "maintenance": {
+    "maintenanceFrequency": "Kontinuerlig",
+    "maintenanceNote": "Tjenesten kan benyttes til å få en oversikt over tilgjengelige dybdedata, f.eks. i forbindelse med planlagte aktiviteter i et spesifikt område. Ved hjelp av informasjon tilgjengelig i egenskapstabellen, vil man kunne få et innblikk i kvalitet og egnethet av dybdedata. Nyere data er å anse av best kvalitet, da det har hovedsakelig blitt samlet inn ved bruk av multistråle ekkolodd, mens eldre data er samlet inn med enkeltstråle ekkolodd eller annet eldre utstyr.  \nTjenesten kan også benyttes til kart, presentasjoner, ulike analyser eller som beslutningsgrunnlag.",
+    "status": "Kontinuerlig oppdatert"
+  },
+  "delivery": {
+    "distributions": [
+      {
+        "format": {
+          "format": "OGC:API-Features"
+        },
+        "access": {
+          "href": "https://hybasapi.atgcp1-prod.kartverket.cloud/",
+          "protocol": "OGC:API-Features"
+        }
+      },
+      {
+        "title": "OGC API-Features",
+        "format": {
+          "format": "OGC API-Features"
+        },
+        "access": {
+          "href": "https://hybasapi.atgcp1-prod.kartverket.cloud/",
+          "protocol": "OGC:API-Features"
+        }
+      }
+    ]
+  },
+  "metadata": {
+    "standard": "ISO19115",
+    "standardVersion": "2003",
+    "metadataDate": "2025-02-26",
+    "language": "nor",
+    "pointOfContact": {
+      "organization": "Kartverket",
+      "email": "kundesenteret@kartverket.no",
+      "role": "pointOfContact"
+    },
+    "identifiers": [
+      {
+        "authority": "geonorge",
+        "code": "58a262c2-4903-4dea-9490-10065fda6756"
+      }
+    ],
+    "metadataUrl": "https://www.geonorge.no/geonetwork/srv/nor/csw?service=CSW&request=GetRecordById&version=2.0.2&outputSchema=http://www.isotc211.org/2005/gmd&elementSetName=full&id=58a262c2-4903-4dea-9490-10065fda6756"
+  },
+  "links": [
+    {
+      "href": "https://www.geonorge.no/geonetwork/srv/nor/csw?service=CSW&request=GetRecordById&version=2.0.2&outputSchema=http://www.isotc211.org/2005/gmd&elementSetName=full&id=58a262c2-4903-4dea-9490-10065fda6756",
+      "rel": "describedby",
+      "type": "application/xml",
+      "title": "Metadata (ISO 19139)"
+    },
+    {
+      "href": "https://hybasapi.atgcp1-prod.kartverket.cloud/",
+      "rel": "enclosure",
+      "type": "text/html",
+      "title": "Nedlasting"
+    }
+  ]
+}
