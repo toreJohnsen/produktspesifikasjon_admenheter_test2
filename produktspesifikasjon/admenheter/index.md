@@ -80,12 +80,13 @@ Framstille den offisielle kommuneinndelingen.
 
 - **nivå**: dataset
 - **utstrekning**: - **tidsmessig**: - **intervall**: - 2006-07-01, 2025-07-04
-- **juridiske begrensninger**: - **useLimitation**: Ingen begrensninger på bruk er oppgitt. Se forøvrig lisens.
-    - **tilgangsbegrensninger**: Åpne data
-    - **bruksbegrensninger**: Lisens
-    - **lisens**: Creative Commons BY 4.0 (CC BY 4.0)
-    - **lisenslenke**: https://creativecommons.org/licenses/by/4.0/
-    - **sikkerhetsbegrensninger**: Ugradert
+- **juridiske begrensninger**:
+  - **useLimitation**: Ingen begrensninger på bruk er oppgitt. Se forøvrig lisens.
+  - **tilgangsbegrensninger**: Åpne data
+  - **bruksbegrensninger**: Lisens
+  - **lisens**: Creative Commons BY 4.0 (CC BY 4.0)
+  - **lisenslenke**: https://creativecommons.org/licenses/by/4.0/
+  - **sikkerhetsbegrensninger**: Ugradert
 
 ## Innhold og struktur
 
@@ -93,87 +94,7 @@ Framstille den offisielle kommuneinndelingen.
 
 ### Datamodell
 
-```plantuml
-@startuml
-title Administrative enheter kommuner - Objekttyper
-
-skinparam class {
-  AttributeIconSize 0
-}
-
-package "Objekttyper" {
-
-  class Fylker <<featureType>> {
-    + objid [0..1] : Integer
-    + objtype [0..1] : CharacterString
-    + lokalid [0..1] : CharacterString
-    + navnerom [0..1] : CharacterString
-    + versjonid [0..1] : CharacterString
-    + oppdateringsdato [0..1] : DateTime
-    + gyldigfra [0..1] : Date
-    + gyldigtil [0..1] : Date
-    + datafangstdato [0..1] : DateTime
-    + datauttaksdato [0..1] : DateTime
-    + opphav [0..1] : CharacterString
-    + fylkesnummer [0..1] : CharacterString
-    + fylkesnavn [0..1] : CharacterString
-    + samiskforvaltningsomrade [0..1] : Boolean
-  }
-
-  class Fylkesgrenser <<featureType>> {
-    + objid [0..1] : Integer
-    + objtype [0..1] : CharacterString
-    + lokalid [0..1] : CharacterString
-    + navnerom [0..1] : CharacterString
-    + versjonid [0..1] : CharacterString
-    + oppdateringsdato [0..1] : DateTime
-    + gyldigfra [0..1] : Date
-    + gyldigtil [0..1] : Date
-    + datafangstdato [0..1] : DateTime
-    + malemetode [0..1] : CharacterString
-    + noyaktighet [0..1] : Integer
-    + datauttaksdato [0..1] : DateTime
-    + opphav [0..1] : CharacterString
-    + avgrensningstype [0..1] : CharacterString
-  }
-
-  class Kommuner <<featureType>> {
-    + objid [0..1] : Integer
-    + objtype [0..1] : CharacterString
-    + lokalid [0..1] : CharacterString
-    + navnerom [0..1] : CharacterString
-    + versjonid [0..1] : CharacterString
-    + oppdateringsdato [0..1] : DateTime
-    + gyldigfra [0..1] : Date
-    + gyldigtil [0..1] : Date
-    + datafangstdato [0..1] : DateTime
-    + datauttaksdato [0..1] : DateTime
-    + opphav [0..1] : CharacterString
-    + kommunenummer [0..1] : CharacterString
-    + kommunenavn [0..1] : CharacterString
-    + samiskforvaltningsomrade [0..1] : Boolean
-  }
-
-  class Kommunegrenser <<featureType>> {
-    + objid [0..1] : Integer
-    + objtype [0..1] : CharacterString
-    + lokalid [0..1] : CharacterString
-    + navnerom [0..1] : CharacterString
-    + versjonid [0..1] : CharacterString
-    + oppdateringsdato [0..1] : DateTime
-    + gyldigfra [0..1] : Date
-    + gyldigtil [0..1] : Date
-    + datafangstdato [0..1] : DateTime
-    + malemetode [0..1] : CharacterString
-    + noyaktighet [0..1] : Integer
-    + datauttaksdato [0..1] : DateTime
-    + opphav [0..1] : CharacterString
-    + avgrensningstype [0..1] : CharacterString
-  }
-}
-
-@enduml
-```
+![Admenheter feature catalogue](admenheter_feature_catalogue.png)
 
 #### Fylker
 
@@ -593,40 +514,41 @@ Egenskaper
 
 ## Referansesystem
 
-- **romlige referansesystemer**: - - **kode**: EPSG:25832
-      - **navn**: EUREF89 UTM sone 32, 2d
-    - - **kode**: EPSG:25833
-      - **navn**: EUREF89 UTM sone 33, 2d
-    - - **kode**: EPSG:25835
-      - **navn**: EUREF89 UTM sone 35, 2d
-    - - **kode**: EPSG:3035
-      - **navn**: EUREF89 / ETRS89-LAEA Europe
-    - - **kode**: EPSG:4258
-      - **navn**: EUREF 89 Geografisk (ETRS 89) 2d
-    - - **kode**: EPSG:25832
-      - **navn**: EUREF89 UTM sone 32, 2d
+- **romlige referansesystemer**:
+  - **kode**: EPSG:25832
+    - **navn**: EUREF89 UTM sone 32, 2d
+  - **kode**: EPSG:25833
+    - **navn**: EUREF89 UTM sone 33, 2d
+  - **kode**: EPSG:25835
+    - **navn**: EUREF89 UTM sone 35, 2d
+  - **kode**: EPSG:3035
+    - **navn**: EUREF89 / ETRS89-LAEA Europe
+  - **kode**: EPSG:4258
+    - **navn**: EUREF 89 Geografisk (ETRS 89) 2d
+  - **kode**: EPSG:25832
+    - **navn**: EUREF89 UTM sone 32, 2d
 - **romlig representasjonstype**: Vektor
 
 ## Kvalitet
 
 - **nivå**: dataset
-- - **navn**: COMMISSION REGULATION (EU) No 1089/2010 of 23 November 2010 implementing Directive 2007/2/EC of the European Parliament and of the Council as regards interoperability of spatial data sets and services
+- **navn**: COMMISSION REGULATION (EU) No 1089/2010 of 23 November 2010 implementing Directive 2007/2/EC of the European Parliament and of the Council as regards interoperability of spatial data sets and services
   - **måleparameter**: Dataene er i henhold til produktspesifikasjonen
-- - **navn**: SOSI produktspesifikasjon: Administrative enheter Norge
+- **navn**: SOSI produktspesifikasjon: Administrative enheter Norge
   - **måleparameter**: Dataene er i henhold til produktspesifikasjonen
-- - **navn**: Sosi applikasjonsskjema
+- **navn**: Sosi applikasjonsskjema
   - **måleparameter**: SOSI-filer er i henhold til applikasjonsskjema
-- - **navn**: Sosi applikasjonsskjema
+- **navn**: Sosi applikasjonsskjema
   - **måleparameter**: GML-filer er i henhold til applikasjonsskjema
-- - **navn**: Prosentvis dekning i forhold til datasettets utstrekning
+- **navn**: Prosentvis dekning i forhold til datasettets utstrekning
   - **måleparameter**: Datasettets faktiske kartlagte areal i forhold til datasettets spesifiserte utstrekning
   - **resultat**: 100
-- - **navn**: Prosentvis oppfyllelse av FAIR-prinsipper
+- **navn**: Prosentvis oppfyllelse av FAIR-prinsipper
   - **måleparameter**: Angir fullstendighet i forhold til krav fra FAIR-prinsippene (The FAIR Guiding Principles for scientific data management and stewardship)
   - **resultat**: 96
-- - **navn**: FAIR
+- **navn**: FAIR
   - **resultat**: Prosentvis oppfyllelse av FAIR-prinsipper: 96%
-- - **navn**: Coverage
+- **navn**: Coverage
   - **resultat**: Prosentvis dekning i forhold til datasettets utstrekning: 100%
 - **beskrivelse**: Trenger du hjelp til å laste ned og ta i bruk Kartverkets data og tjenester? På kartverket.no finner du tips og veiledning.
 
@@ -646,19 +568,23 @@ Forvaltningsmessig saksbehandling. Analyse og presentasjon i et GIS-system. Pres
 
 ## Leveranse
 
-- **distribusjoner**: - - **format**: - **format**: GEONORGE:DOWNLOAD
-      - **tilgang**: - **lenke**: https://nedlasting.geonorge.no/api/capabilities/
-          - **protokoll**: GEONORGE:DOWNLOAD
-    - - **tittel**: Geonorge nedlastning
-      - **format**: - **format**: Geonorge nedlastning
-      - **tilgang**: - **lenke**: https://nedlasting.geonorge.no/api/capabilities/
-          - **protokoll**: GEONORGE:DOWNLOAD
-    - - **tittel**: Administrative enheter WMS
-      - **format**: - **format**: png
-      - **tilgang**: - **lenke**: https://wms.geonorge.no/skwms1/wms.adm_enheter2?service=wms&request=GetCapabilities
-          - **protokoll**: WMS-tjeneste
-          - **lisens**: Åpne data
-      - **notater**: Tjeneste
+- **distribusjoner**:
+  - **format**: - **format**: GEONORGE:DOWNLOAD
+    - **tilgang**:
+      - **lenke**: https://nedlasting.geonorge.no/api/capabilities/
+      - **protokoll**: GEONORGE:DOWNLOAD
+  - **tittel**: Geonorge nedlastning
+    - **format**: - **format**: Geonorge nedlastning
+    - **tilgang**:
+      - **lenke**: https://nedlasting.geonorge.no/api/capabilities/
+      - **protokoll**: GEONORGE:DOWNLOAD
+  - **tittel**: Administrative enheter WMS
+    - **format**: - **format**: png
+    - **tilgang**:
+      - **lenke**: https://wms.geonorge.no/skwms1/wms.adm_enheter2?service=wms&request=GetCapabilities
+      - **protokoll**: WMS-tjeneste
+      - **lisens**: Åpne data
+    - **notater**: Tjeneste
 
 ## Metadata
 
@@ -666,9 +592,11 @@ Forvaltningsmessig saksbehandling. Analyse og presentasjon i et GIS-system. Pres
 - **standardversjon**: 2003
 - **metadatadato**: 2025-10-30
 - **språk**: nor
-- **kontaktpunkt**: - **organisasjon**: Kartverket
-    - **epost**: post@kartverket.no
-    - **rolle**: pointOfContact
-- **identifikatorer**: - - **myndighet**: geonorge
-      - **kode**: 041f1e6e-bdbc-4091-b48f-8a5990f3cc5b
+- **kontaktpunkt**:
+  - **organisasjon**: Kartverket
+  - **epost**: post@kartverket.no
+  - **rolle**: pointOfContact
+- **identifikatorer**:
+  - **myndighet**: geonorge
+    - **kode**: 041f1e6e-bdbc-4091-b48f-8a5990f3cc5b
 - **metadatalenke**: https://www.geonorge.no/geonetwork/srv/nor/csw?service=CSW&request=GetRecordById&version=2.0.2&outputSchema=http://www.isotc211.org/2005/gmd&elementSetName=full&id=041f1e6e-bdbc-4091-b48f-8a5990f3cc5b
