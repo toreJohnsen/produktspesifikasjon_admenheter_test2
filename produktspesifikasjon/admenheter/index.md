@@ -590,7 +590,7 @@ Forvaltningsmessig saksbehandling. Analyse og presentasjon i et GIS-system. Pres
 
 - **standard**: ISO19115
 - **standardversjon**: 2003
-- **metadatadato**: 2025-10-30
+- **metadatadato**: 2025-10-31
 - **språk**: nor
 - **kontaktpunkt**:
   - **organisasjon**: Kartverket

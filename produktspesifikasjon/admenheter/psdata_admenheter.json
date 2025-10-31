@@ -32,7 +32,7 @@
       "creation": "2006-07-01",
       "publication": "2006-07-01",
       "revision": "2025-07-04",
-      "metadata": "2025-10-30"
+      "metadata": "2025-10-31"
     },
     "responsibleParties": [
       {
@@ -195,7 +195,7 @@
   "metadata": {
     "standard": "ISO19115",
     "standardVersion": "2003",
-    "metadataDate": "2025-10-30",
+    "metadataDate": "2025-10-31",
     "language": "nor",
     "pointOfContact": {
       "organization": "Kartverket",
