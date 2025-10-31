@@ -1,0 +1,199 @@
+{
+  "identification": {
+    "id": "51d279f8-e2be-4f5e-9f72-1a53f7535ec1",
+    "title": "Statistiske enheter grunnkretser",
+    "abstract": "Datasettet viser grunnkretsinndelingen i Norge. Grunnkretser er stabile statistiske enheter som ble opprettet i samarbeid mellom kommunen og Statistisk sentralbyrå (SSB) rundt 1980.",
+    "language": "nor",
+    "keywords": [
+      "Befolkningsfordeling",
+      "Inspire",
+      "geodataloven",
+      "modellbaserteVegprosjekter",
+      "fellesDatakatalog",
+      "Norge digitalt",
+      "Befolkning",
+      "Norge"
+    ],
+    "topicCategories": [
+      "Administrative grenser"
+    ],
+    "dates": {
+      "revision": "2025-02-21",
+      "metadata": "2025-10-31"
+    },
+    "responsibleParties": [
+      {
+        "name": "Carina Tolpinrud Jøntvedt",
+        "organization": "Kartverket",
+        "email": "kundesenter@kartverket.no",
+        "role": "owner"
+      },
+      {
+        "name": "Carina Tolpinrud Jøntvedt",
+        "organization": "Kartverket",
+        "email": "kundesenter@kartverket.no",
+        "role": "pointOfContact"
+      },
+      {
+        "organization": "Kartverket",
+        "email": "kundesenter@kartverket.no",
+        "role": "publisher"
+      }
+    ],
+    "supplementalInformation": "SSB er ansvarlig for grunnkretsinndelingen i Norge. SSB tildeler grunnkretsnummer til hver grunnkrets og er adressat for søknad om endring/nyetablering av grunnkretser. Kartverket er ansvarlig for den digitale databasen over grunnkretser og for å holde datasettet ajour i samarbeid med SSB.\n\nTrenger du hjelp til å laste ned og ta i bruk Kartverkets data og tjenester? På kartverket.no finner du tips og veiledning."
+  },
+  "scope": {
+    "level": "dataset",
+    "extent": {
+      "temporal": {
+        "interval": [
+          [
+            "2025-02-21",
+            "2025-02-21"
+          ]
+        ]
+      }
+    },
+    "legalConstraints": {
+      "accessConstraints": "Åpne data",
+      "useConstraints": "Lisens",
+      "license": "Creative Commons BY 4.0 (CC BY 4.0)",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+      "securityConstraints": "Ugradert"
+    }
+  },
+  "dataContent": {
+    "usage": "Statistiske beregninger. Analyse og presentasjon i et GIS-system. Produksjon av kart og avledede produkter. Forvaltningsmessig saksbehandling av kretser."
+  },
+  "referenceSystems": {
+    "spatialReferenceSystems": [
+      {
+        "code": "EPSG:25832",
+        "name": "EUREF89 UTM sone 32, 2d"
+      },
+      {
+        "code": "EPSG:25833",
+        "name": "EUREF89 UTM sone 33, 2d"
+      },
+      {
+        "code": "EPSG:25835",
+        "name": "EUREF89 UTM sone 35, 2d"
+      },
+      {
+        "code": "EPSG:3035",
+        "name": "EUREF89 / ETRS89-LAEA Europe"
+      },
+      {
+        "code": "EPSG:4258",
+        "name": "EUREF 89 Geografisk (ETRS 89) 2d"
+      },
+      {
+        "code": "EPSG:25832",
+        "name": "EUREF89 UTM sone 32, 2d"
+      }
+    ],
+    "spatialRepresentationType": "Vektor"
+  },
+  "dataQuality": {
+    "scope": {
+      "level": "dataset"
+    },
+    "qualityElements": [
+      {
+        "name": "COMMISSION REGULATION (EU) No 1089/2010 of 23 November 2010 implementing Directive 2007/2/EC of the European Parliament and of the Council as regards interoperability of spatial data sets and services",
+        "measure": "Dataene er ikke vurdert iht produktspesifikasjonen"
+      },
+      {
+        "name": "SOSI produktspesifikasjon: Statistiske enheter - Norges grunnkretser",
+        "measure": "Dataene er ikke vurdert iht produktspesifikasjonen"
+      }
+    ],
+    "lineage": {
+      "statement": "SSB er ansvarlig for grunnkretsinndelingen i Norge. SSB tildeler grunnkretsnummer til hver grunnkrets og er adressat for søknad om endring/nyetablering av grunnkretser. Kartverket er ansvarlig for den digitale databasen over grunnkretser og for å holde datasettet ajour i samarbeid med SSB.\n\nTrenger du hjelp til å laste ned og ta i bruk Kartverkets data og tjenester? På kartverket.no finner du tips og veiledning."
+    }
+  },
+  "maintenance": {
+    "maintenanceFrequency": "Etter behov",
+    "maintenanceNote": "Statistiske beregninger. Analyse og presentasjon i et GIS-system. Produksjon av kart og avledede produkter. Forvaltningsmessig saksbehandling av kretser.",
+    "status": "Fullført"
+  },
+  "delivery": {
+    "distributions": [
+      {
+        "format": {
+          "format": "GEONORGE:DOWNLOAD"
+        },
+        "access": {
+          "href": "https://nedlasting.geonorge.no/api/capabilities/",
+          "protocol": "GEONORGE:DOWNLOAD"
+        }
+      },
+      {
+        "title": "Geonorge nedlastning",
+        "format": {
+          "format": "Geonorge nedlastning"
+        },
+        "access": {
+          "href": "https://nedlasting.geonorge.no/api/capabilities/",
+          "protocol": "GEONORGE:DOWNLOAD"
+        }
+      },
+      {
+        "title": "Statistiske enheter grunnkretser WMS",
+        "format": {
+          "format": "png"
+        },
+        "access": {
+          "href": "https://wms.geonorge.no/skwms1/wms.grunnkretser?request=GetCapabilities&service=WMS",
+          "protocol": "WMS-tjeneste",
+          "license": "Åpne data"
+        },
+        "notes": "Tjeneste"
+      }
+    ]
+  },
+  "metadata": {
+    "standard": "ISO19115",
+    "standardVersion": "2003",
+    "metadataDate": "2025-10-31",
+    "language": "nor",
+    "pointOfContact": {
+      "organization": "Kartverket",
+      "email": "kundesenter@kartverket.no",
+      "role": "pointOfContact"
+    },
+    "identifiers": [
+      {
+        "authority": "geonorge",
+        "code": "51d279f8-e2be-4f5e-9f72-1a53f7535ec1"
+      }
+    ],
+    "metadataUrl": "https://www.geonorge.no/geonetwork/srv/nor/csw?service=CSW&request=GetRecordById&version=2.0.2&outputSchema=http://www.isotc211.org/2005/gmd&elementSetName=full&id=51d279f8-e2be-4f5e-9f72-1a53f7535ec1"
+  },
+  "links": [
+    {
+      "href": "https://www.geonorge.no/geonetwork/srv/nor/csw?service=CSW&request=GetRecordById&version=2.0.2&outputSchema=http://www.isotc211.org/2005/gmd&elementSetName=full&id=51d279f8-e2be-4f5e-9f72-1a53f7535ec1",
+      "rel": "describedby",
+      "type": "application/xml",
+      "title": "Metadata (ISO 19139)"
+    },
+    {
+      "href": "https://nedlasting.geonorge.no/api/capabilities/",
+      "rel": "enclosure",
+      "type": "text/html",
+      "title": "Nedlasting"
+    },
+    {
+      "href": "#!?zoom=3&lon=306722&lat=7197864&wms=https://wms.geonorge.no/skwms1/wms.grunnkretser",
+      "rel": "service",
+      "type": "text/html",
+      "title": "Tjeneste"
+    },
+    {
+      "href": "https://wms.geonorge.no/skwms1/wms.grunnkretser?request=GetCapabilities&service=WMS",
+      "rel": "service",
+      "type": "application/xml",
+      "title": "Tjeneste-distribusjon"
+    }
+  ]
+}
