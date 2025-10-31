@@ -1,5 +1,5 @@
-metadataId: 51d279f8-e2be-4f5e-9f72-1a53f7535ec1
-ogc_feature_api: https://kos-pygeoapi.atkv3-dev.kartverket.cloud/collections
+metadataId: 58a262c2-4903-4dea-9490-10065fda6756
+ogc_feature_api: https://hybasapi.atgcp1-prod.kartverket.cloud/collections
 output_directory: produktspesifikasjon
-product_slug: grunnkretser
-updated: 2025-01-01
+product_slug: dybdedata
+updated: 2025-10-31
